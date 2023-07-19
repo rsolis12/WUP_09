@@ -130,3 +130,4 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottom",main="Adjusted R^2")
 The best regression model is all of them. The two best regression models are L1 and L3 similar to the first example taken there both the same model.
 
 ## Final Summary Statements
+In today assignment i use the Best subset regression.rmd file to find the best models of fish using their weight based on height and length models without weighing them in a scenario. In most of the data charts it appeared that L1 and L3 appeared to be the best models most for perch and Roach as they were both the highest and the same in the respective areas. The subset proved to be the most useful in making it easier to find out which results are best when filtering though multiple model sets.
