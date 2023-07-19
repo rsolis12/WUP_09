@@ -113,6 +113,7 @@ This model suummarizes our best two regression models. The standard residual err
 Roachbest <- lm(Weight~.,data=Roach)
 summary(Roachbest)
 ```
+The Residual standard error is 37.58, while the R-squared is 0.8681. And the p-value is  1.02.
 ### Best Two regressor model
 ```{r}
 regsubsets.out <-
@@ -124,6 +125,8 @@ regsubsets.out <-
                method = "exhaustive")
 summary.out <- summary(regsubsets.out)
 as.data.frame(summary.out$outmat)
-subsets(regsubsets.out,statistic="adjr2",legend="topright",main="Adjusted R^2")
+subsets(regsubsets.out,statistic="adjr2",legend="bottom",main="Adjusted R^2")
 ```
+The best regression model is all of them. The two best regression models are L1 and L3 similar to the first example taken there both the same model.
+
 ## Final Summary Statements
