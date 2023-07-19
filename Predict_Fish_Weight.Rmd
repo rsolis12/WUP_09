@@ -102,14 +102,28 @@ The r squared is .9859 and the residual error is 70.86. The p value is 8.679. Th
 Piketwo <-lm(Weight~Length1+Length3, data=Pike)
 summary.lm(Piketwo)
 ```
-
+This model suummarizes our best two regression models. The standard residual error is 92.56. The R R-squared is  0.9693. The  p-value: 2.572. The smallest P value is the best reslut here.
 
 ### Best Two regressor model
 
 ## Roach
 
 ### Best Models
-
+```{r}
+Roachbest <- lm(Weight~.,data=Roach)
+summary(Roachbest)
+```
 ### Best Two regressor model
-
+```{r}
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = Roach,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+subsets(regsubsets.out,statistic="adjr2",legend="topright",main="Adjusted R^2")
+```
 ## Final Summary Statements
