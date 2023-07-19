@@ -77,7 +77,19 @@ Length 1 and 2 model are the best models for perch, their best two regressors mo
 
 
 ## Pike
-
+```{r}
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = Pike,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
+```
+L1 and L3 are the best regression models
 ### Best Models
 
 ### Best Two regressor model
