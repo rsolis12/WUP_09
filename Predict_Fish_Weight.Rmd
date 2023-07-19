@@ -56,7 +56,7 @@ Whitefish <- select(Whitefish, -Species)
 best.model <- lm(Weight~Height+Width,data=Perch)
 summary(best.model)
 ```
-
+The adjusted r squared is .94 and the standard residual error is 85.17. the p value is 2.2.
 
 ### Best Two regressor model
 ```{r}
@@ -71,7 +71,8 @@ summary.out <- summary(regsubsets.out)
 as.data.frame(summary.out$outmat)
 subsets(regsubsets.out,statistic="adjr2",legend="topright",main="Adjusted R^2")
 ```
-Length 1 and 2 model are the best models for perch
+Length 1 and 2 model are the best models for perch, their best two regressors models are height and width
+
 
 
 
