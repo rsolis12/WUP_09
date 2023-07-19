@@ -71,7 +71,7 @@ summary.out <- summary(regsubsets.out)
 as.data.frame(summary.out$outmat)
 subsets(regsubsets.out,statistic="adjr2",legend="topright",main="Adjusted R^2")
 ```
-
+Length 1 and 2 model are the best models for perch
 
 
 
